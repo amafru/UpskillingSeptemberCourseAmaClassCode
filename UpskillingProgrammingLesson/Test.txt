@@ -1,0 +1,2 @@
+Creating a multiple methods in a class with same name but different parameters and types is 
+called as method overloading.method overloading is the example of Compile time polymorphism which is  done at compile time.
