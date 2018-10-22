@@ -1,30 +1,37 @@
-﻿using CourseManagementSystemAutomation.Hooks;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
+using CourseManagementSystemAutomation.Hooks;
+using CourseManagementSystemAutomation.Pages;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-
-namespace CourseManagementSystemAutomation.StepDefinitions
+namespace CourseManagementSystemAutomation.StepDefinition
 {
-    [Binding] //specflow annotation (labelling)
+    [Binding] //SpecFlow Annotation
     class StudentSteps
     {
+        Context context; //The Context class which we call here and severally below is housed within the 'Hooks' folder
+        StudentPage studentPage;
+        DatabaseHelper databaseHelper;
 
-        Context context; 
+        //Use Constructor 'Dependency Injection' approach to get an instance of a class(object)
+        //This is same as defining an object of a class and using it to call methods from that class. 
+        //Just another way of doing it 
 
-        public StudentSteps(Context _context) //This is a constructor
+        public StudentSteps(Context _context, StudentPage _studentPage, DatabaseHelper _dbHelper) // This is a constructor 
         {
             context = _context;
+            studentPage = _studentPage;
+            databaseHelper = _dbHelper;
         }
 
-
-        [Given(@"that Course Management System is loaded")]
-        public void GivenThatCourseManagementSystemIsLoaded()
+        [BeforeScenario] //any code here would be executed before test run
+        public void BeforeTestRunActivity()
         {
-            context.SetUp();
+
         }
 
         [AfterScenario] //any code here would be executed after test run
@@ -33,79 +40,92 @@ namespace CourseManagementSystemAutomation.StepDefinitions
             context.ShutDown();
         }
 
+
+
+        [Given(@"that Course Management System is loaded")]
+        public void GivenThatCourseManagementSystemIsLoaded()
+        {
+            context.SetUp();
+        }
+
         [When(@"a user clicks on Student link")]
         public void WhenAUserClicksOnStudentLink()
         {
-            ScenarioContext.Current.Pending();
+            databaseHelper.ClearTable("Person");
+            studentPage.ClickOnStudentLink();
         }
 
         [When(@"a user clicks on Create New link")]
         public void WhenAUserClicksOnCreateNewLink()
         {
-            ScenarioContext.Current.Pending();
+            studentPage.ClickOnCreateNewLink();
         }
 
-        [When(@"a user fills in Family Name field with (.*)")]
-        public void WhenAUserFillsInFamilyNameFieldWithTom(string familyName)
+        [When(@"a user fill-in Family Name field with (.*)")]
+        public void WhenAUserFill_InFamilyNameFieldWithBrett(string familyName)
+        {
+            studentPage.FillInFamilyNameField(familyName);
+        }
+
+        [When(@"a user fill-in First Name field with (.*)")]
+        public void WhenAUserFill_InFirstNameFieldWithTom(string firstName)
+        {
+            studentPage.FillInFirstNameField(firstName);
+        }
+
+        [When(@"a user fill-in Enrollment Date field with (.*)")]
+        public void WhenAUserFill_InEnrollmentDateFieldWith(string enrollmentDate)
+        {
+            studentPage.FillInEnrollmentDateField(enrollmentDate);
+        }
+
+        [When(@"a user clicks on Student Create Button")]
+        public void WhenAUserClicksOnStudentCreateButton()
+        {
+            studentPage.ClickOnCreateStudentButton();
+        }
+
+        [Then(@"a new student record (.*) should be created")]
+        public void ThenANewStudentRecordShouldBeCreated(string expectedResult)
+        {
+            string actualResult = studentPage.StudentRecordTable();
+            Assert.IsTrue(expectedResult.Equals(actualResult), "Expected result " + " " + expectedResult + " " + "is different to the Actual Result" + actualResult); //empty ""s are simply for spacing 
+        }
+
+
+
+
+
+
+
+
+        [When(@"a user fill-in a form with the following data:")]
+        public void WhenAUserFill_InAFormWithTheFollowingData(Table table)
         {
             ScenarioContext.Current.Pending();
         }
 
-        [When(@"a user fills in First Name field with (.*)")]
-        public void WhenAUserFillsInFirstNameFieldWithBrett(string firstName)
+
+        [When(@"a user click on Student link")]
+        public void WhenAUserClickOnStudentLink()
         {
             ScenarioContext.Current.Pending();
         }
 
-        [When(@"a user fills in Enrollment Date field with (.*)")]
-        public void WhenAUserFillsInEnrollmentDateFieldWith(string enrollmentDate)
+        [When(@"a user fill-in a form for (.*), (.*), (.*) fields")]
+        public void WhenAUserFill_InAFormForBrettTomFields(string familyName, string firstName, string enrollmentDate)
         {
             ScenarioContext.Current.Pending();
         }
 
-        [When(@"a user clicks on Create Button")]
-        public void WhenAUserClicksOnCreateButton()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"a new student record should be created")]
-        public void ThenANewStudentRecordShouldBeCreated()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [When(@"a user fills in a form with the following data")]
-        public void WhenAUserFillsInAFormWithTheFollowingData(Table table)
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-       
-
-        [When(@"a user clicks student link")]
-        public void WhenAUserClicksStudentLink()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [When(@"a user creates Create New link")]
-        public void WhenAUserCreatesCreateNewLink()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [When(@"a user fills in a form for (.*), (.*), (.*)")]
-        public void WhenAUserFillsInAFormForBrettTomFields(string familyName, string firstName, string enrollmentDate)
-        {
-            ScenarioContext.Current.Pending();
-        }
 
         [Then(@"an expected result is equal to (.*)")]
         public void ThenAnExpectedResultIsEqualTo(string expectedResult)
         {
             ScenarioContext.Current.Pending();
         }
+
+
 
     }
 }

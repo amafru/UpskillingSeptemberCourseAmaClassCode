@@ -93,25 +93,25 @@ namespace CourseManagementSystemAutomation.Features
         public virtual void VerifyThatANewStudentRecordCanBeCreated()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify that a new student record can be created", null, ((string[])(null)));
-#line 5
+#line 8
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 6
-testRunner.Given("that Course Management System is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 7
-testRunner.When("a user clicks on Student link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 8
-testRunner.And("a user clicks on Create New link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
-testRunner.And("a user fills in Family Name field with Tom", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("that Course Management System is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
-testRunner.And("a user fills in First Name field with Brett", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("a user clicks on Student link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
-testRunner.And("a user fills in Enrollment Date field with 13/10/2018", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("a user clicks on Create New link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
-testRunner.And("a user clicks on Create Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("a user fill-in Family Name field with Brett", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
-testRunner.Then("a new student record should be created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("a user fill-in First Name field with Tom", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 14
+testRunner.And("a user fill-in Enrollment Date field with 12/10/2018", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 15
+testRunner.And("a user clicks on Student Create Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 16
+testRunner.Then("a new student record Tom should be created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -122,14 +122,14 @@ testRunner.Then("a new student record should be created", ((string)(null)), ((Te
         public virtual void VerifyThatAUserCanCreateANewStudentRecord()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify that a user can create a new student record", null, ((string[])(null)));
-#line 17
+#line 19
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 18
-testRunner.Given("that Course Management System is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 19
-testRunner.When("a user clicks on Student link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 20
+testRunner.Given("that Course Management System is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 21
+testRunner.When("a user clicks on Student link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 22
 testRunner.And("a user clicks on Create New link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -137,36 +137,36 @@ testRunner.And("a user clicks on Create New link", ((string)(null)), ((TechTalk.
                         "FirstName",
                         "EnrollmentDate"});
             table1.AddRow(new string[] {
-                        "Tom",
                         "Brett",
+                        "Tom",
                         "13/10/2018"});
-#line 21
-testRunner.And("a user fills in a form with the following data", ((string)(null)), table1, "And ");
-#line 24
-testRunner.And("a user clicks on Create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 25
+#line 23
+testRunner.And("a user fill-in a form with the following data:", ((string)(null)), table1, "And ");
+#line 26
+testRunner.And("a user clicks on Student Create Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
 testRunner.Then("a new student record should be created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        public virtual void VerifyThatAUserCanValideDifferentConditionsAroundCreationOfStudentRecord(string familyName, string firstName, string enrollmentDate, string expectedResult, string[] exampleTags)
+        public virtual void VerifyThatAUserCanValidateDifferentConditionsAroundCreationOfStudentRecord(string familyName, string firstName, string enrollmentDate, string expectedResult, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify that a user can valide different conditions around creation of student rec" +
-                    "ord", null, exampleTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify that a user can validate different conditions around creation of student r" +
+                    "ecord", null, exampleTags);
 #line 29
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 30
 testRunner.Given("that Course Management System is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 31
-testRunner.When("a user clicks student link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("a user click on Student link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 32
-testRunner.And("a user creates Create New link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("a user clicks on Create New link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
-testRunner.And(string.Format("a user fills in a form for {0}, {1} {2}, fields", familyName, firstName, enrollmentDate), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("a user fill-in a form for {0}, {1}, {2} fields", familyName, firstName, enrollmentDate), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 34
-testRunner.And("a user clicks on Create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("a user clicks on Student Create Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
 testRunner.Then("an expected result is equal to <ExpectedResults>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -174,114 +174,114 @@ testRunner.Then("an expected result is equal to <ExpectedResults>", ((string)(nu
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify that a user can valide different conditions around creation of student rec" +
-            "ord: Variant 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify that a user can validate different conditions around creation of student r" +
+            "ecord: Variant 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Student")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FamilyName", "Brett")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FirstName", "Tom")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:EnrollmentDate", "13/10/2018")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ExpectedResult", "A new student record should be created")]
-        public virtual void VerifyThatAUserCanValideDifferentConditionsAroundCreationOfStudentRecord_Variant0()
+        public virtual void VerifyThatAUserCanValidateDifferentConditionsAroundCreationOfStudentRecord_Variant0()
         {
 #line 29
-this.VerifyThatAUserCanValideDifferentConditionsAroundCreationOfStudentRecord("Brett", "Tom", "13/10/2018", "A new student record should be created", ((string[])(null)));
+this.VerifyThatAUserCanValidateDifferentConditionsAroundCreationOfStudentRecord("Brett", "Tom", "13/10/2018", "A new student record should be created", ((string[])(null)));
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify that a user can valide different conditions around creation of student rec" +
-            "ord: Variant 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify that a user can validate different conditions around creation of student r" +
+            "ecord: Variant 1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Student")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FamilyName", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FirstName", "Tom")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:EnrollmentDate", "13/10/2018")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ExpectedResult", "Family Name is required")]
-        public virtual void VerifyThatAUserCanValideDifferentConditionsAroundCreationOfStudentRecord_Variant1()
+        public virtual void VerifyThatAUserCanValidateDifferentConditionsAroundCreationOfStudentRecord_Variant1()
         {
 #line 29
-this.VerifyThatAUserCanValideDifferentConditionsAroundCreationOfStudentRecord("", "Tom", "13/10/2018", "Family Name is required", ((string[])(null)));
+this.VerifyThatAUserCanValidateDifferentConditionsAroundCreationOfStudentRecord("", "Tom", "13/10/2018", "Family Name is required", ((string[])(null)));
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify that a user can valide different conditions around creation of student rec" +
-            "ord: Variant 2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify that a user can validate different conditions around creation of student r" +
+            "ecord: Variant 2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Student")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FamilyName", "Brett")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FirstName", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:EnrollmentDate", "13/10/2018")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ExpectedResult", "First Name is required")]
-        public virtual void VerifyThatAUserCanValideDifferentConditionsAroundCreationOfStudentRecord_Variant2()
+        public virtual void VerifyThatAUserCanValidateDifferentConditionsAroundCreationOfStudentRecord_Variant2()
         {
 #line 29
-this.VerifyThatAUserCanValideDifferentConditionsAroundCreationOfStudentRecord("Brett", "", "13/10/2018", "First Name is required", ((string[])(null)));
+this.VerifyThatAUserCanValidateDifferentConditionsAroundCreationOfStudentRecord("Brett", "", "13/10/2018", "First Name is required", ((string[])(null)));
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify that a user can valide different conditions around creation of student rec" +
-            "ord: Variant 3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify that a user can validate different conditions around creation of student r" +
+            "ecord: Variant 3")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Student")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 3")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FamilyName", "Brett")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FirstName", "Tom")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:EnrollmentDate", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ExpectedResult", "Enrollment date is required")]
-        public virtual void VerifyThatAUserCanValideDifferentConditionsAroundCreationOfStudentRecord_Variant3()
+        public virtual void VerifyThatAUserCanValidateDifferentConditionsAroundCreationOfStudentRecord_Variant3()
         {
 #line 29
-this.VerifyThatAUserCanValideDifferentConditionsAroundCreationOfStudentRecord("Brett", "Tom", "", "Enrollment date is required", ((string[])(null)));
+this.VerifyThatAUserCanValidateDifferentConditionsAroundCreationOfStudentRecord("Brett", "Tom", "", "Enrollment date is required", ((string[])(null)));
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify that a user can valide different conditions around creation of student rec" +
-            "ord: Variant 4")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify that a user can validate different conditions around creation of student r" +
+            "ecord: Variant 4")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Student")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 4")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FamilyName", "Brett")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FirstName", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:EnrollmentDate", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ExpectedResult", "First name is required, Enrollment date is required")]
-        public virtual void VerifyThatAUserCanValideDifferentConditionsAroundCreationOfStudentRecord_Variant4()
+        public virtual void VerifyThatAUserCanValidateDifferentConditionsAroundCreationOfStudentRecord_Variant4()
         {
 #line 29
-this.VerifyThatAUserCanValideDifferentConditionsAroundCreationOfStudentRecord("Brett", "", "", "First name is required, Enrollment date is required", ((string[])(null)));
+this.VerifyThatAUserCanValidateDifferentConditionsAroundCreationOfStudentRecord("Brett", "", "", "First name is required, Enrollment date is required", ((string[])(null)));
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify that a user can valide different conditions around creation of student rec" +
-            "ord: Variant 5")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify that a user can validate different conditions around creation of student r" +
+            "ecord: Variant 5")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Student")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 5")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FamilyName", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FirstName", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:EnrollmentDate", "13/10/2018")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ExpectedResult", "Family name is required, First name is required")]
-        public virtual void VerifyThatAUserCanValideDifferentConditionsAroundCreationOfStudentRecord_Variant5()
+        public virtual void VerifyThatAUserCanValidateDifferentConditionsAroundCreationOfStudentRecord_Variant5()
         {
 #line 29
-this.VerifyThatAUserCanValideDifferentConditionsAroundCreationOfStudentRecord("", "", "13/10/2018", "Family name is required, First name is required", ((string[])(null)));
+this.VerifyThatAUserCanValidateDifferentConditionsAroundCreationOfStudentRecord("", "", "13/10/2018", "Family name is required, First name is required", ((string[])(null)));
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify that a user can valide different conditions around creation of student rec" +
-            "ord: Variant 6")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify that a user can validate different conditions around creation of student r" +
+            "ecord: Variant 6")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Student")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 6")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FamilyName", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FirstName", "Tom")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:EnrollmentDate", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ExpectedResult", "Family name is required, Enrollment date is required")]
-        public virtual void VerifyThatAUserCanValideDifferentConditionsAroundCreationOfStudentRecord_Variant6()
+        public virtual void VerifyThatAUserCanValidateDifferentConditionsAroundCreationOfStudentRecord_Variant6()
         {
 #line 29
-this.VerifyThatAUserCanValideDifferentConditionsAroundCreationOfStudentRecord("", "Tom", "", "Family name is required, Enrollment date is required", ((string[])(null)));
+this.VerifyThatAUserCanValidateDifferentConditionsAroundCreationOfStudentRecord("", "Tom", "", "Family name is required, Enrollment date is required", ((string[])(null)));
 #line hidden
         }
     }

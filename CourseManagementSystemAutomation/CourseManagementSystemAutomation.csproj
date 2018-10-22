@@ -42,6 +42,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
@@ -73,17 +74,53 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Features\Admin.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Admin.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Course.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Course.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Department.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Department.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Enrollment.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Enrollment.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Instructor.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Instructor.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Registration.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Registration.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Student.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Student.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Task.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Task.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\TeachingAssign.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TeachingAssign.feature</DependentUpon>
+    </Compile>
     <Compile Include="Hooks\Context.cs" />
+    <Compile Include="Hooks\DatabaseHelper.cs" />
     <Compile Include="Pages\CoursePage.cs" />
     <Compile Include="Pages\StudentPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,13 +128,41 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Features\Admin.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Admin.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Course.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Course.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Department.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Department.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Enrollment.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Enrollment.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Instructor.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Instructor.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Registration.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Registration.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Student.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Student.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Task.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Task.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\TeachingAssign.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>TeachingAssign.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

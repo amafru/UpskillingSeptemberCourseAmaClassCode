@@ -15,20 +15,21 @@ namespace CourseManagementSystemAutomation.Hooks
     public class Context
     {
         public IWebDriver driver;
-        string baseURL = "http://localhost/CourseManagementSystem/enrollment";
+        string baseURL = "http://localhost/CourseManagementSystem/";
 
         public void SetUp()
         {
-            driver = new ChromeDriver(); //specifying Chrome as chosen driver
-            driver.Navigate().GoToUrl(baseURL); //This will call the baseURL specified above on the browser
-            driver.Manage().Window.Maximize(); //maximise the chrome browser window
-            Thread.Sleep(2000); //Means: wait for 2 seconds before proceeding
+            driver = new ChromeDriver(); //call a Chrome Browser
+            driver.Navigate().GoToUrl(baseURL); //Go to url specified above ^^ (baseURL)
+            driver.Manage().Window.Maximize(); //Maximise the Chrome browser Window
+            Thread.Sleep(2000); //Wait for 2 seconds 
         }
 
-        public void ShutDown()
+        public void ShutDown() //This is to close the browser 
         {
-            driver.Quit(); //This is to close the browser upon test finish. Whether result is pass or fail
-            driver.Dispose(); //This clears the computer memory
+            driver.Quit();
+            driver.Dispose();
         }
+
     }
 }
