@@ -7,6 +7,8 @@ using TechTalk.SpecFlow;
 using CourseManagementSystemAutomation.Hooks;
 using CourseManagementSystemAutomation.Pages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TechTalk.SpecFlow.Assist;
+using CourseManagementSystemAutomation.Model;
 
 namespace CourseManagementSystemAutomation.StepDefinition
 {
@@ -92,40 +94,74 @@ namespace CourseManagementSystemAutomation.StepDefinition
             Assert.IsTrue(expectedResult.Equals(actualResult), "Expected result " + " " + expectedResult + " " + "is different to the Actual Result" + actualResult); //empty ""s are simply for spacing 
         }
 
-
-
-
-
-
-
-
         [When(@"a user fill-in a form with the following data:")]
         public void WhenAUserFill_InAFormWithTheFollowingData(Table table)
         {
-            ScenarioContext.Current.Pending();
-        }
-
-
-        [When(@"a user click on Student link")]
-        public void WhenAUserClickOnStudentLink()
-        {
-            ScenarioContext.Current.Pending();
+            /*The model class is used to model data from specflow in a situation where we want to use a table
+             * to specify our test data but don't want to implement a scenario outline*/
+              
+            var tableData = table.CreateInstance<StudentModel>(); 
+            studentPage.FillInFamilyNameField(tableData.FamilyName);
+            studentPage.FillInFirstNameField(tableData.FirstName);
+            studentPage.FillInEnrollmentDateField(tableData.EnrollmentDate);
         }
 
         [When(@"a user fill-in a form for (.*), (.*), (.*) fields")]
         public void WhenAUserFill_InAFormForBrettTomFields(string familyName, string firstName, string enrollmentDate)
         {
-            ScenarioContext.Current.Pending();
+            studentPage.FillInFamilyNameField(familyName);
+            studentPage.FillInFirstNameField(firstName);
+            studentPage.FillInEnrollmentDateField(enrollmentDate);
         }
 
 
         [Then(@"an expected result is equal to (.*)")]
         public void ThenAnExpectedResultIsEqualTo(string expectedResult)
         {
-            ScenarioContext.Current.Pending();
+            string actualResult = string.Empty; //this is same as.... string = "";
+            string actualResult1 = "";
+            string actualResult2 = string.Empty;
+
+            if (expectedResult.Equals("Brett"))
+            {
+                actualResult = studentPage.StudentRecordTable();
+            }
+            else if (expectedResult.Equals("Last name is required"))
+            {
+                actualResult = studentPage.FamilyNameErrorMsg();
+            }
+            else if (expectedResult.Equals("First name is required"))
+            {
+                //We can use var instead of string datatype when we're not sure what the data type for the variable in question is. 
+                //e.g. the values might contain special xters, numbers etc (like a web link)
+
+                actualResult = studentPage.FirstNameErrorMsg();
+            }
+            else if (expectedResult.Equals("Enrollment date is required"))
+            {
+                actualResult = studentPage.EnrollmentDateErrorMsg();
+            }
+            else if (expectedResult.Equals("First name is required, Enrollment date is required"))
+            {
+                actualResult1 = studentPage.FirstNameErrorMsg();
+                actualResult2 = studentPage.EnrollmentDateErrorMsg();
+                actualResult = actualResult1 + "," + actualResult2; //The comma is in here cuz our spectflow scenario Expected Result table definition contains a comma too
+            }
+            else if (expectedResult.Equals("Last name is required, First name is required"))
+            {
+                actualResult1 = studentPage.FamilyNameErrorMsg();
+                actualResult2 = studentPage.FirstNameErrorMsg();
+                actualResult = actualResult1 + "," + actualResult2;
+            }
+            else if (expectedResult.Equals("Last name is required, Enrollment date is required"))
+            {
+                actualResult1 = studentPage.FamilyNameErrorMsg();
+                actualResult2 = studentPage.EnrollmentDateErrorMsg();
+                actualResult = actualResult1 + "," + actualResult2;
+            }
+            Assert.IsTrue(expectedResult.Equals(actualResult), "Expected result " + " " + expectedResult + " " + "is different to the Actual Result" + actualResult);
+
         }
-
-
 
     }
 }

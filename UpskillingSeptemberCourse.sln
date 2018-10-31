@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpskillingProgrammingLesson
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseManagementSystemAutomation", "CourseManagementSystemAutomation\CourseManagementSystemAutomation.csproj", "{61FBA1FA-0DA8-43E7-B319-1B2EF8FEE6AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagementAPIAutomation", "TaskManagementAPIAutomation\TaskManagementAPIAutomation.csproj", "{04ABA666-256C-41B2-8345-65ABE8EC3E1C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{61FBA1FA-0DA8-43E7-B319-1B2EF8FEE6AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61FBA1FA-0DA8-43E7-B319-1B2EF8FEE6AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61FBA1FA-0DA8-43E7-B319-1B2EF8FEE6AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04ABA666-256C-41B2-8345-65ABE8EC3E1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04ABA666-256C-41B2-8345-65ABE8EC3E1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04ABA666-256C-41B2-8345-65ABE8EC3E1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04ABA666-256C-41B2-8345-65ABE8EC3E1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -418,16 +418,18 @@ namespace UpskillingProgrammingLesson
             //Write a computer program to read the contents from Test notepad
             //and write the contents to the console
 
-            //The code below is copied from a simple google search and then refactored to be relevant to our code
-            using (var reader = new StreamReader(@"Test.txt"))
-            {
-                string line;
-                while ((line = reader.ReadLine()) != null) //!null means 'Don't read any empty lines from the notepad txt'
-                {
-                    Console.WriteLine(line); //where 'line is the variable name of the datatype string
-                }
-            }
+            ////The code below is copied from a simple google search and then refactored to be relevant to our code
+            //using (var reader = new StreamReader(@"Test.txt"))
+            //{
+            //    string line;
+            //    while ((line = reader.ReadLine()) != null) //!null means 'Don't read any empty lines from the notepad txt'
+            //    {
+            //        Console.WriteLine(line); //where 'line is the variable name of the datatype string
+            //    }
+            //}
 
+            
+            
         }
     }
 }

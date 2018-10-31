@@ -30,6 +30,9 @@ namespace CourseManagementSystemAutomation.Pages
         By studentRecordTable = By.XPath("/html/body/div[2]/table");
         By studentTableRow = By.TagName("tr");
         By studentTableData = By.TagName("td");
+        By errorMsgFamilyName = By.XPath("/html/body/div[2]/form/div/div[2]/div/span");
+        By errorMsgFirstName = By.XPath("/html/body/div[2]/form/div/div[3]/div/span");
+        By errorMsgEnnrollmentDate = By.XPath("/html/body/div[2]/form/div/div[4]/div/span");
 
         public void ClickOnStudentLink()
         {
@@ -38,13 +41,13 @@ namespace CourseManagementSystemAutomation.Pages
             //And in the course of running multiple tests can be come very resource heavy
             //So please delete and comment out from a live framework at work as necessary. 
 
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
             context.driver.FindElement(studentLink).Click();
         }
 
         public void ClickOnCreateNewLink()
         {
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
             context.driver.FindElement(createNewLink).Click();
         }
 
@@ -57,7 +60,7 @@ namespace CourseManagementSystemAutomation.Pages
 
             //Better way to write the above code below.... 
 
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
             IWebElement familyNameField = context.driver.FindElement(familyName);
             familyNameField.Clear();
             familyNameField.SendKeys(familyNameData);
@@ -65,7 +68,7 @@ namespace CourseManagementSystemAutomation.Pages
 
         public void FillInFirstNameField(string firstNameData)
         {
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
             IWebElement firstNameField = context.driver.FindElement(firstName);
             firstNameField.Clear();
             firstNameField.SendKeys(firstNameData);
@@ -74,7 +77,7 @@ namespace CourseManagementSystemAutomation.Pages
 
         public void FillInEnrollmentDateField(string enrollmentDateData)
         {
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
             IWebElement enrollmentDateField = context.driver.FindElement(enrollmentDate);
             enrollmentDateField.Clear();
             enrollmentDateField.SendKeys(enrollmentDateData);
@@ -82,7 +85,7 @@ namespace CourseManagementSystemAutomation.Pages
 
         public void ClickOnCreateStudentButton()
         {
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
             context.driver.FindElement(createStudentBtn).Click();
             Thread.Sleep(2000);
         }
@@ -108,7 +111,21 @@ namespace CourseManagementSystemAutomation.Pages
             }
             return actualData;
         }
+        public string FamilyNameErrorMsg()
+        {
+            return context.driver.FindElement(errorMsgFamilyName).Text;
+        }
 
+        public string FirstNameErrorMsg()
+        {
+            return context.driver.FindElement(errorMsgFirstName).Text;
+        }
+        public string EnrollmentDateErrorMsg()
+        {
+            //Here's the baby way of doing the above
+            string enrollmentDateErrorMessage = context.driver.FindElement(errorMsgEnnrollmentDate).Text;
+            return enrollmentDateErrorMessage;
+        }
 
     }
 }
