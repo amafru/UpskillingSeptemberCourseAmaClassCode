@@ -87,12 +87,10 @@ namespace CourseManagementSystemAutomation.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify that a user can create a new Course record")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Course")]
-        public virtual void VerifyThatAUserCanCreateANewCourseRecord()
+        public virtual void VerifyThatAUserCanValidateDifferentConditionsAroundTheCreationOfANewCourseRecord(string courseNumber, string courseTitle, string numberOfCredits, string departmentId, string expectedResults, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify that a user can create a new Course record", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify that a user can validate different conditions around the creation of a new" +
+                    " Course record", null, exampleTags);
 #line 3
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -103,19 +101,87 @@ testRunner.When("a user clicks on Course link from the menu", ((string)(null)), 
 #line 6
 testRunner.And("a user clicks on Create New Course link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 7
-testRunner.And("a user inputs 3 to a Course Number field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("a user inputs a CourseNumber to the Course Number field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
-testRunner.And("a user fills in the Title field with Test Automation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("a user fills in the Title field with CourseTitle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
-testRunner.And("a user fills in 4 in credit field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("a user fills in the credit field with a credit value of NumberOfCredits", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
-testRunner.And("a user selects Geography from Department drop down menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("a user selects a department name DepartmentId drop down menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
 testRunner.And("a user clicks on Create new course button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
-testRunner.Then("a new course record Test Automation should be created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the expected results should be equal to ExpectedResults", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify that a user can validate different conditions around the creation of a new" +
+            " Course record: Variant 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Course")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:CourseNumber", "3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:CourseTitle", "TestAutomation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumberOfCredits", "4")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DepartmentId", "Biology")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ExpectedResults", "TestAutomation")]
+        public virtual void VerifyThatAUserCanValidateDifferentConditionsAroundTheCreationOfANewCourseRecord_Variant0()
+        {
+#line 3
+this.VerifyThatAUserCanValidateDifferentConditionsAroundTheCreationOfANewCourseRecord("3", "TestAutomation", "4", "Biology", "TestAutomation", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify that a user can validate different conditions around the creation of a new" +
+            " Course record: Variant 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Course")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:CourseNumber", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:CourseTitle", "TestAutomation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumberOfCredits", "4")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DepartmentId", "Biology")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ExpectedResults", "The Course Number field is required.")]
+        public virtual void VerifyThatAUserCanValidateDifferentConditionsAroundTheCreationOfANewCourseRecord_Variant1()
+        {
+#line 3
+this.VerifyThatAUserCanValidateDifferentConditionsAroundTheCreationOfANewCourseRecord("", "TestAutomation", "4", "Biology", "The Course Number field is required.", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify that a user can validate different conditions around the creation of a new" +
+            " Course record: Variant 2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Course")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:CourseNumber", "3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:CourseTitle", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumberOfCredits", "4")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DepartmentId", "Biology")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ExpectedResults", "Title is required")]
+        public virtual void VerifyThatAUserCanValidateDifferentConditionsAroundTheCreationOfANewCourseRecord_Variant2()
+        {
+#line 3
+this.VerifyThatAUserCanValidateDifferentConditionsAroundTheCreationOfANewCourseRecord("3", "", "4", "Biology", "Title is required", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify that a user can validate different conditions around the creation of a new" +
+            " Course record: Variant 3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Course")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:CourseNumber", "3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:CourseTitle", "TestAutomation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumberOfCredits", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DepartmentId", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ExpectedResults", "Number of credits is required.")]
+        public virtual void VerifyThatAUserCanValidateDifferentConditionsAroundTheCreationOfANewCourseRecord_Variant3()
+        {
+#line 3
+this.VerifyThatAUserCanValidateDifferentConditionsAroundTheCreationOfANewCourseRecord("3", "TestAutomation", "", "", "Number of credits is required.", ((string[])(null)));
+#line hidden
         }
     }
 }

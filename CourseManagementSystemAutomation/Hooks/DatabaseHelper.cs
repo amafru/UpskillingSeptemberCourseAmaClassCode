@@ -19,7 +19,7 @@ namespace CourseManagementSystemAutomation.Hooks
         //We use a passing argrument in the "ClearTable" method below, to define the particular table within the database.
         //And the expression "[dbo].["table"] below also further helps VS identify the specific table
 
-        
+
 
         string connectionString = "Data Source=DESKTOP-TKEH56A\\SQLEXPRESS;Initial Catalog=CourseManagementSystem.Models.SchoolContext; Integrated Security=True;MultipleActiveResultSets=True";
 
@@ -43,6 +43,22 @@ namespace CourseManagementSystemAutomation.Hooks
                     command.ExecuteNonQuery();
                 }
             }
+
         }
+
+        //public void PopulateTable(string table, int DepartmentId, string departmentName)
+        //{
+        //    string query = "";
+        //    if (table.Equals("tb_Department"))
+        //    {
+        //        query = "Insert Into [dbo].[" + table + "](DepartmentId, Name, Budget, StartDate, PersonId) Values(1, 'Green Lantern where Discriminator = 'Budget'";
+        //    }
+        //    else
+        //    {
+
+        //    }
     }
 }
+
+
+

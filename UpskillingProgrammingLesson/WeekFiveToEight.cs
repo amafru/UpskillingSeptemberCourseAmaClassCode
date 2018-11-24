@@ -382,7 +382,7 @@ namespace UpskillingProgrammingLesson
 
 
             ////Task 32
-            ////Polymorphism (is made up of two concepts 'Overloading' and 'Overriding' (overriding is out of scope)
+            ////Polymorphism (is made up of two concepts 'Overloading' and 'Overriding' 
 
 
             ////Task 32: Method overloading (under Polymorphism) 

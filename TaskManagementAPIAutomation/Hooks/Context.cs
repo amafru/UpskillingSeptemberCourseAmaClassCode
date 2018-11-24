@@ -14,7 +14,7 @@ namespace TaskManagementAPIAutomation.Hooks
         public string actualStatusCode;
         public string actualResponseDescription;
 
-        public void GetCall(string resource)
+        public void GetRequest(string resource)
         {
             var client = new RestClient(baseURL);
             var request = new RestRequest(resource, Method.GET);
@@ -26,30 +26,32 @@ namespace TaskManagementAPIAutomation.Hooks
 
         }
 
-        public void PostCall(string resource, string dataBody)
+        public void PostRequest(string resource, Dictionary<string, string> datatoPost)
         {
             var client = new RestClient(baseURL);
             var request = new RestRequest(resource, Method.POST);
-            request.AddBody(dataBody);
-            request.AddHeader("Content Type", "application/json");
+            request.RequestFormat = DataFormat.Json;
+            request.AddBody(datatoPost);
+            request.AddHeader("Content-Type", "application/json");
             var queryResult = client.Execute(request);
             actualStatusCode = queryResult.StatusCode.ToString();
             actualResponseDescription = queryResult.StatusDescription;
 
         }
 
-        public void PutCall(string resource, string dataBody)
+        public void PutRequest(string resource, Dictionary<string, string> dataBody)
         {
             var client = new RestClient(baseURL);
             var request = new RestRequest(resource, Method.PUT);
+            request.RequestFormat = DataFormat.Json;
             request.AddBody(dataBody);
-            request.AddHeader("Content Type", "application/json");
+            request.AddHeader("Content-Type", "application/json");
             var queryResult = client.Execute(request);
             actualStatusCode = queryResult.StatusCode.ToString();
             actualResponseDescription = queryResult.StatusDescription;
         }
 
-        public void DeleteCall(string resource)
+        public void DeleteRequest(string resource)
         {
             var client = new RestClient(baseURL);
             var request = new RestRequest(resource, Method.DELETE);

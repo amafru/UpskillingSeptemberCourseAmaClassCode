@@ -1,43 +1,47 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using TechTalk.SpecFlow;
+using CourseManagementSystemAutomation.Hooks;
+using CourseManagementSystemAutomation.Pages;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TechTalk.SpecFlow.Assist;
+using CourseManagementSystemAutomation.Model;
 
 namespace CourseManagementSystemAutomation.StepDefinitions
 {
     [Binding]
     public class CourseSteps
     {
+        Context context;
+        CoursePage coursePage;
+        DatabaseHelper databaseHelper;
+
+        public CourseSteps(Context _context, CoursePage _coursepage, DatabaseHelper _dbhelper)
+        {
+            context = _context;
+            coursePage = _coursepage;
+            databaseHelper = _dbhelper;
+        }
+
         [When(@"a user clicks on Course link from the menu")]
         public void WhenAUserClicksOnCourseLinkFromTheMenu()
         {
-            ScenarioContext.Current.Pending();
+            databaseHelper.ClearTable("Course");
+            coursePage.ClickOnCourseLink();
         }
         
         [When(@"a user clicks on Create New Course link")]
         public void WhenAUserClicksOnCreateNewCourseLink()
         {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [When(@"a user inputs (.*) to a Course Number field")]
-        public void WhenAUserInputsToACourseNumberField(string courseNumber)
-        {
-            ScenarioContext.Current.Pending();
+            coursePage.CreateNewCourseLink();
+            
         }
         
         [When(@"a user fills in the Title field with (.*)")]
         public void WhenAUserFillsInTheTitleFieldWithTestAutomation(string courseName)
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [When(@"a user fills in (.*) in credit field")]
-        public void WhenAUserFillsInInCreditField(string credit)
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [When(@"a user selects (.*) from Department drop down menu")]
-        public void WhenAUserSelectsGeographyFromDepartmentDropDownMenu(string subject)
         {
             ScenarioContext.Current.Pending();
         }
@@ -53,5 +57,30 @@ namespace CourseManagementSystemAutomation.StepDefinitions
         {
             ScenarioContext.Current.Pending();
         }
+
+        [When(@"a user inputs a (.*) to the Course Number field")]
+        public void WhenAUserInputsACourseNumberToTheCourseNumberField(int courseNumber)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [When(@"a user fills in the credit field with a credit value of (.*)")]
+        public void WhenAUserFillsInTheCreditFieldWithACreditValueOfCreditValue(int numberOfCredits)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [When(@"a user selects a department name (.*) drop down menu")]
+        public void WhenAUserSelectsADepartmentNameDepartmentIdDropDownMenu(string departmentName)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"the expected results should be equal to (.*)")]
+        public void ThenTheExpectedResultsShouldBeEqualToExpectedResults(string expectedResults)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
     }
 }

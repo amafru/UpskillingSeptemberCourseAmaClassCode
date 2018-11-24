@@ -99,12 +99,10 @@ namespace TaskManagementAPIAutomation.Features
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
-testRunner.Given("that Task Manamgement Systeme API service is up and running", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.When("the API service is up and running with GET endpoint /Projects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 6
-testRunner.When("a user makes GET call to the resource /Projects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 7
 testRunner.Then("the status code for GET call is equal to OK", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 8
+#line 7
 testRunner.And("the response description for GET call is equal to OK", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -117,8 +115,8 @@ testRunner.And("the response description for GET call is equal to OK", ((string)
                         "Unit Testing"});
             table1.AddRow(new string[] {
                         "API Testing"});
-#line 9
-testRunner.Then("the following records should be retrieved", ((string)(null)), table1, "Then ");
+#line 8
+testRunner.And("the following records should be retrieved", ((string)(null)), table1, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -129,16 +127,14 @@ testRunner.Then("the following records should be retrieved", ((string)(null)), t
         public virtual void API_Project_02_VerifyThatANewRecordCanBeCreatedInTheDatabase()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("API_Project_02_Verify that a new record can be created in the database", null, ((string[])(null)));
-#line 16
+#line 15
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
+#line 16
+testRunner.When("the API service is up and running with POST endpoint /Projects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
-testRunner.Given("that Task Manamgement Systeme API service is up and running", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 18
-testRunner.When("a user makes POST call to the resource /Projects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 19
 testRunner.Then("the status code for POST call is equal to Created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 20
+#line 18
 testRunner.And("the response description for POST call is equal to Created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -152,16 +148,14 @@ testRunner.And("the response description for POST call is equal to Created", ((s
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("API_Project_03_Verify that existing project records can be modified in the databa" +
                     "se", null, ((string[])(null)));
-#line 23
+#line 21
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 24
-testRunner.Given("that Task Manamgement Systeme API service is up and running", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 22
+testRunner.When("the API service is up and running with PUT endpoint /Projects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 23
+testRunner.Then("the status code for PUT call is equal to NoContent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 25
-testRunner.When("a user makes PUT call to the resource /Projects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 26
-testRunner.Then("the status code for PUT call is equal to No Content", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 27
 testRunner.And("the response description for PUT call is equal to No Content", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -175,16 +169,14 @@ testRunner.And("the response description for PUT call is equal to No Content", (
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("API_Project_04_Verify that existing project records can be deleted from the datab" +
                     "ase", null, ((string[])(null)));
-#line 29
+#line 27
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 30
-testRunner.Given("that Task Manamgement Systeme API service is up and running", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 31
-testRunner.When("a user makes DELETE call to the resource /Projects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 32
+#line 28
+testRunner.When("the API service is up and running with DELETE endpoint /Projects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 29
 testRunner.Then("the status code for DELETE call is equal to OK", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 33
+#line 30
 testRunner.And("the response description for DELETE call is equal to OK", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

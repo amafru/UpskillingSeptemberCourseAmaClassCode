@@ -36,11 +36,11 @@ And a user fill-in a form for <FamilyName>, <FirstName>, <EnrollmentDate> fields
 And a user clicks on Student Create Button 
 Then an expected result is equal to <ExpectedResult>
 Examples:
-| FamilyName | FirstName | EnrollmentDate | ExpectedResult                                      |
-| Brett      | Tom       | 13/10/2018     | Brett                                               |
-|            | Tom       | 13/10/2018     | Last name is required                             |
-| Brett      |           | 13/10/2018     | First name is required                              |
-| Brett      | Tom       |                | Enrollment date is required                         |
-| Brett      |           |                | First name is required,Enrollment date is required  |
-|            |           | 13/10/2018     | Last name is required,First name is required      |
-|            | Tom       |                | Last name is required,Enrollment date is required |
+| FamilyName | FirstName | EnrollmentDate | ExpectedResult                                     |
+| Brett      | Tom       | 13/10/2018     | Brett                                              |
+|            | Tom       | 13/10/2018     | Last name is required                              |
+| Brett      |           | 13/10/2018     | First name is required                             |
+| Brett      | Tom       |                | Enrollment date is required                        |
+| Brett      |           |                | First name is required,Enrollment date is required |
+|            |           | 13/10/2018     | Last name is required,First name is required       |
+|            | Tom       |                | Last name is required,Enrollment date is required  |
