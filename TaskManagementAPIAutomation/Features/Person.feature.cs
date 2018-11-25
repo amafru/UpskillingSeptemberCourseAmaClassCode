@@ -86,6 +86,104 @@ namespace TaskManagementAPIAutomation.Features
         {
             testRunner.CollectScenarioErrors();
         }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("API_Person_01_Verify that existing person record can be retrieved from the databa" +
+            "se")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Person")]
+        public virtual void API_Person_01_VerifyThatExistingPersonRecordCanBeRetrievedFromTheDatabase()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("API_Person_01_Verify that existing person record can be retrieved from the databa" +
+                    "se", null, ((string[])(null)));
+#line 4
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+testRunner.When("the API service is up and running GET method with endpoint /Person", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 6
+testRunner.Then("the status code for our GET call is equal to OK", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 7
+testRunner.And("the response description for our GET call is equal to OK", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "LastName",
+                        "FirstName"});
+            table1.AddRow(new string[] {
+                        "Oladipo",
+                        "James"});
+            table1.AddRow(new string[] {
+                        "Nolan",
+                        "Sarah"});
+            table1.AddRow(new string[] {
+                        "Lawrence",
+                        "Amy"});
+            table1.AddRow(new string[] {
+                        "Princeton",
+                        "Jeff"});
+#line 8
+testRunner.And("the records below should be retrieved", ((string)(null)), table1, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("API_Person_02_Verify that a new Person record can be created in the database")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Person")]
+        public virtual void API_Person_02_VerifyThatANewPersonRecordCanBeCreatedInTheDatabase()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("API_Person_02_Verify that a new Person record can be created in the database", null, ((string[])(null)));
+#line 16
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 17
+testRunner.When("the API service is up and running POST a post method with endpoint /Person", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
+testRunner.Then("the status code for our POST call is equal to Created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 19
+testRunner.And("the response description for our POST call is equal to Created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("API_Person_03_Verify that existing Person record can be modified in the database")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Person")]
+        public virtual void API_Person_03_VerifyThatExistingPersonRecordCanBeModifiedInTheDatabase()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("API_Person_03_Verify that existing Person record can be modified in the database", null, ((string[])(null)));
+#line 22
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 23
+testRunner.When("the API service is up and running a PUT method with endpoint /Person", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 24
+testRunner.Then("the status code for our PUT call is equal to NoContent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 26
+testRunner.And("the response description for our PUT call is equal to No Content", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("API_Person_04_Verify that existing Person record can be deleted from the database" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Person")]
+        public virtual void API_Person_04_VerifyThatExistingPersonRecordCanBeDeletedFromTheDatabase()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("API_Person_04_Verify that existing Person record can be deleted from the database" +
+                    "", null, ((string[])(null)));
+#line 28
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 29
+testRunner.When("the API service is up and running DELETE method with endpoint /Person", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 30
+testRunner.Then("the status code for our DELETE call is equal to OK", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 31
+testRunner.And("the response description for our DELETE call is equal to OK", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

@@ -55,18 +55,18 @@ namespace TaskManagementAPIAutomation.StepDefinitions
         {
             var expectedData = table.CreateSet<ProjectModel>();
             string actualAPIContent = context.actualContent; //This comes back in the form of json data format and needs to be deserialised (google it!)
-            var actualResult = JsonConvert.DeserializeObject<List<ProjectModel>>(actualAPIContent);
+            var actualResult = JsonConvert.DeserializeObject<List<ProjectModel>>(actualAPIContent);           
             Assert.IsTrue(CompareTwoLists(expectedData, actualResult));
         }
 
-        public bool CompareTwoLists(object firstList, object secondList)
+        public bool CompareTwoLists(object firstList, object secondList) //This is a method created for comparing 2 serialized lists. As used just above. It can therefore be housed in e.g. the context class for reuse if so desired
         {
             var objectOne = JsonConvert.SerializeObject(firstList);
             var objectTwo = JsonConvert.SerializeObject(secondList);
             return objectOne == objectTwo;
         }
 
-        
+
 
         [Then(@"the status code for POST call is equal to (.*)")]
         public void ThenTheStatusCodeForPOSTCallIsEqualToCreated(string expectedStatusCode)
@@ -116,7 +116,7 @@ namespace TaskManagementAPIAutomation.StepDefinitions
         public void WhenTheAPIServiceIsUpAndRunningWithPOSTEndpointProjects(string resource)
         {
             //databaseHelper.ClearTable("Projects");
-            //context.PostRequest(resource, File.ReadAllText(@"PostToProject.json"));
+            //context.PostRequest(resource, File.ReadAllText(@"PostToProject.json")); //Syntax for reading body of Post request from a file called PostToProject existent in this Project
 
             Dictionary<string, string> dataToPost = new Dictionary<string, string>();
             dataToPost.Add("Name", "Load Testing");
@@ -129,7 +129,7 @@ namespace TaskManagementAPIAutomation.StepDefinitions
         {
             databaseHelper.ClearTable("Projects");
             databaseHelper.PopulateOneRecordProjectTable();
-            int id = databaseHelper.SelectARecordFromProjectTable();
+            int id = databaseHelper.SelectARecordFromTable("Projects");
             //retrieve newly created record ID and append it to the resource
             Dictionary<string, string> dataToPut = new Dictionary<string, string>();
             dataToPut.Add("id", id.ToString());
@@ -144,7 +144,7 @@ namespace TaskManagementAPIAutomation.StepDefinitions
         {
             databaseHelper.ClearTable("Projects");
             databaseHelper.PopulateOneRecordProjectTable();
-            int id = databaseHelper.SelectARecordFromProjectTable();
+            int id = databaseHelper.SelectARecordFromTable("Projects");
             //retrieve newly created record ID and append it to the resource
             string resourceWithId = resource + "/" + id;
             context.DeleteRequest(resourceWithId);

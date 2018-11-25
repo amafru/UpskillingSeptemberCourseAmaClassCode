@@ -87,9 +87,10 @@
     </Compile>
     <Compile Include="Hooks\Context.cs" />
     <Compile Include="Hooks\DatabaseHelper.cs" />
+    <Compile Include="Model\PersonModel.cs" />
     <Compile Include="Model\ProjectModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StepDefinitions\PeopleSteps.cs" />
+    <Compile Include="StepDefinitions\PersonSteps.cs" />
     <Compile Include="StepDefinitions\ProjectSteps.cs" />
     <Compile Include="StepDefinitions\TaskSteps.cs" />
   </ItemGroup>
